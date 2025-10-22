@@ -30,3 +30,133 @@ pelanggan: Nama pelanggan
 status: Menunjukka keadaan barang apakah sudah terproses atau belum
 
 # Contoh request dan respons
+## POST /items
+
+### Request
+
+#### Endpoint & Header
+```
+POST /items
+Content-Type: application/json
+```
+
+Body
+```
+{
+  "nama": "Nike Air Force",
+  "pelanggan": "George Orwell",
+  "status": "Proses"
+}
+```
+
+### Response
+```
+{
+  "id": 1,
+  "nama": "Nike Air Force",
+  "pelanggan": "George Orwell",
+  "status": "Proses"
+}
+
+```
+
+## GET /items
+### Request
+```
+GET /items
+```
+
+### Response
+```
+[
+  {
+    "id": 1,
+    "nama": "Nike Air Force",
+    "pelanggan": "George Orwell",
+    "status": "Proses"
+  },
+  {
+    "id": 2,
+    "nama": "Yeezy",
+    "pelanggan": "Mark Carney",
+    "status": "Selesai"
+  }
+]
+
+```
+
+## GET /items?status=Selesai
+### Request
+```
+GET /items?status=Selesai
+```
+
+### Response
+```
+[
+  {
+    "id": 2,
+    "nama": "Yeezy",
+    "pelanggan": "Mark Carney",
+    "status": "Selesai"
+  }
+]
+
+```
+
+## GET /items/:id
+### Request
+```
+GET /items/1
+```
+
+### Response
+```
+{
+  "id": 1,
+  "nama": "Nike Air Force",
+  "pelanggan": "George Orwell",
+  "status": "Proses"
+}
+```
+
+## PUT /items/:id
+### Request
+```
+PUT /items/1
+```
+##### Header & Body
+```
+Content-Type: application/json
+
+{
+  "nama": "Nike Air Force 1",
+  "pelanggan": "Budi Santoso",
+  "status": "Selesai"
+}
+```
+
+### Response
+```
+{
+  "id": 1,
+  "nama": "Nike Air Force",
+  "pelanggan": "George Orwell",
+  "status": "Selesai"
+}
+```
+
+## DELETE /items/:id
+### Request
+```
+DELETE /items/1
+
+```
+
+### Response
+```
+{
+  "message": "Item dihapus"
+}
+
+```
