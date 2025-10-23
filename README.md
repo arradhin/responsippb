@@ -160,3 +160,11 @@ DELETE /items/1
 }
 
 ```
+
+# Langkah Instalasi
+Buka terminal dan jalankan perintah ini
+```
+npm init -y
+npm install express cors body-parser
+```
+
